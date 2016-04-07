@@ -24,17 +24,16 @@ EmitTimestampPlugin.prototype._getTimestampObject = function () {
   };
   var dtNow = new Date();
   var now = Date.now();
-  var _ref2 = [dtNow.getFullYear(), dtNow.getMonth() + 1, dtNow.getHours(), dtNow.getHours() % 12, dtNow.getMinutes(), dtNow.getSeconds(), dtNow.getMilliseconds(), Math.floor(now / 1000), now];
-  var YYYY = _ref2[0];
-  var M = _ref2[1];
-  var D = _ref2[2];
-  var H = _ref2[3];
-  var h = _ref2[4];
-  var m = _ref2[5];
-  var s = _ref2[6];
-  var SSS = _ref2[7];
-  var X = _ref2[8];
-  var x = _ref2[9];
+  var YYYY = dtNow.getFullYear();
+  var M = dtNow.getMonth() + 1;
+  var D = dtNow.getDate();
+  var H = dtNow.getHours();
+  var h = dtNow.getHours() % 12;
+  var m = dtNow.getMinutes();
+  var s = dtNow.getSeconds();
+  var sss = dtNow.getMilliseconds();
+  var X = Math.floor(now / 1000);
+  var x = now;
 
   var oResult = {
     now: now,
@@ -42,9 +41,10 @@ EmitTimestampPlugin.prototype._getTimestampObject = function () {
     M: M,
     D: D,
     H: H,
+    h: h,
     m: m,
     s: s,
-    SSS: fnZero(SSS, 3),
+    sss: sss,
     X: X,
     x: x,
     YY: YYYY % 100,
@@ -54,11 +54,13 @@ EmitTimestampPlugin.prototype._getTimestampObject = function () {
     hh: fnZero(h),
     mm: fnZero(m),
     ss: fnZero(s),
+    SSS: fnZero(sss, 3),
     A: H < 12 ? 'AM' : 'PM',
     a: H < 12 ? 'am' : 'pm',
     localized: dtNow.toLocaleString(),
     iso: dtNow.toISOString(),
-    gmt: dtNow.toGMTString()
+    gmt: dtNow.toGMTString(),
+    string: dtNow.toString()
   };
   return oResult;
 };

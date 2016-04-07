@@ -38,6 +38,7 @@ describe('EmitTimestampPlugin', () => {
       fnCheckField('localized');
       fnCheckField('iso');
       fnCheckField('gmt');
+      fnCheckField('string');
       it('has reasonable iso field', () => {
         assert(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z/.test(oResult.iso));
       });
