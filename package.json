@@ -1,6 +1,6 @@
 {
   "name": "emit-timestamp-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Webpack plugin which properly emits a JSON file on the fly.",
   "main": "dist/index.js",
   "scripts": {
