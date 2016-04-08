@@ -33,6 +33,7 @@ A Webpack plugin which properly emits a JSON file on the fly.
   gmt: 'Thu, 07 Apr 2016 11:11:11 GMT',
   string: 'Thu Apr 07 2016 20:11:11 GMT+0900 (대한민국 표준시)' }
 ```
+note that `string` and `localized` field depends on your `node` environment.
 
 # Install
 
@@ -42,6 +43,7 @@ npm i --save-dev emit-timestamp-webpack-plugin
 
 # Usage
 
+`webpack.config.js`
 ```javascript
 
 var EmitTimestampPlugin = require( 'emit-timestamp-webpack-plugin' );
@@ -53,6 +55,21 @@ module.exports = {
   ]
   /*...*/
 };
+```
+
+`your_script.js`
+```javascript
+import getJson from 'your-ajax-library-such-as-fetch-or-jquery-whatever';
+
+getJson('timestamp.json').then((tsObj)=>{
+  // do your thing
+  const formattedTime = `${tsObj.YYYY}-${tsObj.MM}-${tsObj.DD} ${tsObj.HH}:${tsObj.mm}:${tsObj.ss}`;
+  const yourDatetime = new Date(tsObj.now); // beware of timezone offset quirks.
+  alert(`This was compiled at ${formattedTime}. Or... ${yourDatetime.toString()}.`);
+}).catch((err)=>{
+  // duh
+  alert(`emit-timestamp-webpack-plugin sucks. It's not working!`);
+});
 ```
 
 # Options
