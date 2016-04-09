@@ -1,7 +1,7 @@
 {
   "js": {
-    "allowed_file_extensions": ["js", "json", "jshintrc", "jsbeautifyrc", "jsx"],
-    "brace_style": "collapse",
+    "allowed_file_extensions": [ "js", "json", "jshintrc", "jsbeautifyrc", "jsx" ],
+    "brace_style": "collapse-preserve-inline",
     "break_chained_methods": false,
     "e4x": true,
     "end_with_newline": true,
@@ -10,7 +10,7 @@
     "indent_size": 2,
     "indent_with_tabs": false,
     "jslint_happy": true,
-    "keep_array_indentation": false,
+    "keep_array_indentation": true,
     "keep_function_indentation": false,
     "max_preserve_newlines": 0,
     "preserve_newlines": true,
