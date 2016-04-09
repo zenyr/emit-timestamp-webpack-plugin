@@ -1,0 +1,5 @@
+{
+  "source": "./src",
+  "includes": ["\\.jsx?$"],
+  "destination": "./doc"
+}
