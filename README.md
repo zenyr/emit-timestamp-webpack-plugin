@@ -82,5 +82,8 @@ sets .json filename. default: `'timestamp.json'`
 ## `beautify` : boolean
 sets whether to emit a formatted JSON file. default: `false`
 
+## `log` : string
+logs given field to webpack builder. set  to '' or false to disable. default: `'localized'`
+
 # License
 WTFPL
