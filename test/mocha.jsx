@@ -19,6 +19,31 @@ describe('EmitTimestampPlugin', () => {
       assert.equal(typeof EmitTimestampPlugin.apply, 'function');
     });
   });
+  describe('_getGitObject', () => {
+    describe('with full git object', () => {
+      const plugin = new EmitTimestampPlugin({
+        git: {
+          status: true,
+          describe: true,
+        },
+      });
+      it('is a function', () => {
+        assert.equal(typeof plugin._getGitObject, 'function');
+      });
+      const oResult = plugin._getGitObject();
+      it('returns an object', () => {
+        assert.equal(typeof oResult, 'object');
+      });
+      console.log('Looks like:', oResult);
+    });
+    describe('without full git object (!git)', () => {
+      const plugin2 = new EmitTimestampPlugin();
+      const oResult2 = plugin2._getGitObject();
+      it('still returns an object', () => {
+        assert.equal(typeof oResult2, 'object');
+      });
+    });
+  });
   describe('_getTimestampObject', () => {
     const plugin = new EmitTimestampPlugin();
     it('is a function', () => {
