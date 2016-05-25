@@ -1,4 +1,4 @@
-const spawnSync = require( 'child_process' ).spawnSync;
+import { spawnSync } from 'child_process';
 
 class EmitTimestampPlugin {
   constructor( {
@@ -111,4 +111,4 @@ class EmitTimestampPlugin {
   }
 }
 
-export default EmitTimestampPlugin;
+module.exports = EmitTimestampPlugin;

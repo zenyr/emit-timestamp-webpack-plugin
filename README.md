@@ -6,8 +6,10 @@ A Webpack plugin which properly emits a JSON file on the fly.
 
 # Changelog
 
+- `2016-05-25` **v0.3.1**
+  - Fixed ES5 compatibility
 - `2016-05-20` **v0.3.0**
- - Added `{..., git:{status:true, describe:true}}` option (default: false)
+  - Added `{..., git:{status:true, describe:true}}` option (default: false)
 
 # Example
 
