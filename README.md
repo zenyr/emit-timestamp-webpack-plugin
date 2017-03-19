@@ -6,7 +6,7 @@ A Webpack plugin which properly emits a JSON file on the fly.
 
 # Webpack@2 notice
 
-This plugin was built for `webpack@1` and not yet updated for the latest `webpack@2`, which is the default at this moment. 
+This plugin was built for `webpack@1` and not yet updated for the latest `webpack@2`, which is the default at this moment.
 It was not even a thing back then.. :D I intend to update this for the new webpack2 (which is kinda trivial thanks to the new clean API) someday. PR is welcomed.
 
 # Changelog
@@ -100,7 +100,7 @@ sets .json filename. default: `'timestamp.json'`
 sets whether to emit a formatted JSON file. default: `false`
 
 ## `log` : string
-logs given field to webpack builder. set  to '' or false to disable. default: `'localized'`
+logs given field to webpack builder. set  to '' or false to disable. default: `false`
 
 ## `git` : object {status:boolean, describe:boolean} or false
 sets whether to include `status` and `describe` field. Requires `git` in your project's `PATH`. false to disable. default: `false`

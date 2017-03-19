@@ -5,7 +5,7 @@ class EmitTimestampPlugin {
     path = '',
     filename = 'timestamp.json',
     beautify = false,
-    log = 'localized',
+    log = false,
     git = false,
   } = {} ) {
     this.options = {
